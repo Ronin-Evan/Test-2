@@ -1,29 +1,57 @@
+
+# ================================
+# FUNCTION CALCULATOR
+# ================================
+
+# ---------- PART 1: four functions ----------
+
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    return a / b
+
+
+# ---------- MAIN PROGRAM ----------
+print("FUNCTION CALCULATOR")
+
+# ---------- PART 2, 3 and 4 ----------
+
 try:
-    x = int(input("Enter a number for x: "))
-    y = int(input("Enter a number for y: "))
+    # Ask for two numbers
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+
+    # Ask for operation
+    operation = input("Choose operation (add, subtract, multiply, divide): ").lower()
+
+    # Perform calculation
+    if operation == "add":
+        print("Result:", add(num1, num2))
+
+    elif operation == "subtract":
+        print("Result:", subtract(num1, num2))
+
+    elif operation == "multiply":
+        print("Result:", multiply(num1, num2))
+
+    elif operation == "divide":
+        print("Result:", divide(num1, num2))
+
+    else:
+        print("Unknown operation.")
+
 except ValueError:
-    print("Invalid number!")
-add = x + y
-subtract = x-y
-multiply = x*y
-divide = x/y
-user = add or subtract or multiply or divide
-if user == add:
-    print(x+y)
+    print("Error: Please enter valid numbers.")
 
-elif user == subtract:
-    print(x-y)
-
-elif user == multiply:
-    print(x*y)
-
-elif user == divide:
-    print(x/y)
-
-else:
-    print("Invalid!")
-try:
-    x = 0
-    x / y
 except ZeroDivisionError:
-    ("0 is not possible!")
+    print("Error: Cannot divide by zero.")
+
+finally:
+    print("Thank you for using the Function Calculator!")
